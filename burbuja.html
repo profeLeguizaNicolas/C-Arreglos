@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Imagenes/icono.png" type="image/png">
+    <title>Método burbuja</title>
+</head>
+<body>
+    <h1>Ordenamiento Burbuja en <span class="celeste">C++</span>.</h1>
+    <div class="center">
+        <img src="Imagenes/imagen5.gif" alt="">
+    </div>
+    <h3>Introducción.</h3>
+    <p>
+        El ordenamiento burbuja es uno de los algoritmos de ordenación más sencillos. Funciona comparando elementos adyacentes y los intercambia si están en el orden incorrecto. Este proceso se repite hasta que la lista esté ordenada.
+    </p>
+    <h3>Práctica ilustrativa.</h3>
+    <i>Enunciado</i><br>
+    <p>
+        Para practicar el método burbuja, implementaremos un algoritmo mediante un diagrama de flujo y un programa en <span class="celeste">C++</span> para ordenar un conjunto de números enteros de forma ascendente. Luego, el programa deberá mostrar los números ordenados tanto en forma ascendente como descendente.
+    </p>
+    <p>
+        Para ello, utilice un arreglo de cinco elementos con valores predefinidos. Aplique dos bucles anidados para comparar y ordenar los elementos, asegurándose de intercambiarlos cuando sea necesario.
+    </p>
+    <h3>Diagrama de flujo.</h3>
+    <div class="center">
+        <img src="Imagenes/imagen6.png" alt="">
+    </div>
+    <hr>
+    <div class="center">
+        <b>Código del algoritmo de método burbuja.</b>
+    </div>
+<pre><code class="cpp">    #<span class="celeste">include</span><span class="naranja">&lt;iostream></span>
+    <span class="celeste">using namespace</span> std;
+    <span class="celeste">int</span> main <span class="rojo">(){</span>
+        <span class="verde">//   Algoritmo del método burbuja.</span>
+        <span class="celeste">int</span> numeros<span class="rojo">[] ={ <span class="celeste"> 4</span>,<span class="celeste"> 1</span>,<span class="celeste"> 2</span>,<span class="celeste"> 3</span>, <span class="celeste">5</span>}</span>;
+        <span class="celeste">int</span> aux;
+    
+        <span class="celeste">for</span><span class="rojo">(</span><span class="celeste">int</span> i <span class="rojo">=</span> <span class="violeta">0</span><span class="rojo">;</span> i <span class="rojo">&lt;</span> <span class="violeta">5</span> <span class="rojo">;</span> i <span class="rojo">++)</span><span class="rojo">{</span>
+                <span class="celeste">for</span><span class="rojo">(</span><span class="celeste">int</span> j <span class="rojo">=</span> <span class="violeta">0</span>; j <span class="rojo">&lt;</span> <span class="violeta">4</span>; j<span class="rojo">++ ) {</span> <span class="verde">//  Eviteamos el acceso fuera de rango</span>
+                    <span class="celeste">if</span><span class="rojo">(</span>numeros<span class="rojo">[</span>j<span class="rojo">] ></span> numeros<span class="rojo">[</span>j <span class="rojo">+</span><span class="violeta">1</span><span class="rojo">]){</span>
+                        aux <span class="rojo">=</span> numeros<span class="rojo">[</span>j<span class="rojo">]</span>;
+                        numeros<span class="rojo">[</span>j<span class="rojo">]</span> <span class="rojo">=</span> numeros<span class="rojo">[</span>j <span class="rojo">+</span> <span class="violeta">1</span><span class="rojo">]</span>;
+                        numeros<span class="rojo">[</span>j <span class="rojo">+</span><span class="violeta">1</span><span class="rojo">] = </span>aux;
+                    <span class="rojo">}</span>
+                <span class="rojo">}</span>
+            <span class="rojo">}</span>
+        <span class="verde">//   Mostrar el arreglo en orden ascendente</span>
+        cout<span class="rojo">&lt;&lt;</span><span class="dorado">"Orden ascendente: "</span>;
+        <span class="celeste">for</span><span class="rojo">(</span><span class="celeste">int</span> i <span class="rojo">=</span> <span class="violeta">0</span> ; i <span class="rojo">&lt;</span> <span class="violeta">5</span>; i<span class="rojo">++ ){</span>
+        cout<span class="rojo">&lt;&lt;</span>numeros<span class="rojo">[</span>i<span class="rojo">]</span><span class="rojo">&lt;&lt;</span><span class="dorado">" "</span>;
+        <span class="rojo">}</span>
+        cout<span class="rojo">&lt;&lt;</span>endl;
+    
+        <span class="verde">//   Mostrar el arreglo en orden descendente</span>
+        cout<span class="rojo">&lt;&lt;</span><span class="dorado">"Orden descendente"</span>;
+        <span class="celeste">for</span><span class="rojo">(</span><span class="celeste">int</span> i <span class="rojo">=</span> <span class="violeta">4</span> ; i <span class="rojo">>=</span><span class="violeta">0</span> ; i <span class="rojo">-- ) {</span>
+            cout<span class="rojo">&lt;&lt;</span>numeros<span class="rojo">[</span>i<span class="rojo">] &lt;&lt;</span><span class="dorado">" "</span>;
+        <span class="rojo">}</span>
+        cout<span class="rojo">&lt;&lt;</span>endl;
+        <span class="celeste">return</span> <span class="violeta">0</span>;
+    <span class="rojo">}</span></code></pre>
+    <br>
+    <hr>
+    <br>
+    <h3>Imagen ilustrativa del programa.</h3>
+    <div class="center">
+        <img src="Imagenes/imagen7.png" alt="">
+    </div>
+    <hr>
+    <br>
+    <h3>Explicación del uso de bucles anidados:</h3>
+    <p>
+        El algoritmo burbuja usa dos bucles anidados por que:
+    </p>
+    <ol>
+        <li>
+            El primer bucle (Externo) controla la cantidad de pasadas necesarias para asegurarse de que todo los elementos estén en su posición correcta.
+        </li>
+        <li>
+            El segundo bucle (Interno) compara y realiza los intercambios en cada pasada, desplazando los elementos más grandes hacia el final del arreglo.
+        </li>
+    </ol>
+    <div class="center">
+        <a href="index.html">Volver a C++ / Arreglos.</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+</body>
+</html>

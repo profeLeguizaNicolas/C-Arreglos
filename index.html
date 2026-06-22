@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ - Arreglos</title>
+    
+    <link rel="shortcut icon" href="Imagenes/icono.png" type="image/png">
+</head>
+<body>
+    
+    <h1><span class="azul">C++</span> / Estructura de datos. <code class="gris">Arreglos</code></h1>
+    <p>
+        Un <code class="gris">arreglo</code> también conocido como <code class="gris">array</code> en inglés es una estructura de datos que permite almacenar una colección del mismo tipo en una secuencia contigua en mememoria. Cada elemento en el arreglo se identifica mediante un índice numérico, que comienza desde cero y se incrementa en uno para cada elemento sucesivo. Los arreglos proporcionan una forma eficiente de almacenar y acceder a múltiples valores relacionados bajo un mismo nombre.
+    </p>
+    <h2>Características de los arreglos en <span class="azul">C++</span>.</h2>
+    <ul>
+        <li>
+            <p>
+                <b>Tipo y tamaño fijo</b>: Los arreglos en <span class="azul">C++</span> deben contener elementos del mismo tipo de datos por ejemplo, enteros, caracteres, etc. Además, el tamaño del arreglo se determina en el momento de su declaración y es fijo durante la ejecución del programa. Esto significa que una vez que se crea un arreglo, no se puede modificar su tamaño.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>Índices</b>: Los elementos en un arreglo están indexados numéricamente. El primer elemento tiene el índice <code class="gris">0</code>, el segundo tiene el índice <code class="gris">1</code>, y así sucesivamente. Para acceder a un elemento en particular, se utiliza su índice dentro de corchetes por ejemplo, <i><code class="gris">miArreglo[0]</code></i> accede al primer elemento.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>Contigüidad en memoria</b>: Los elementos del <code class="gris">arreglo</code> se amacenan de forma consecutiva en la memoria, lo que permite un acceso rápido y directo a cualquier elemento mediante su índice. 
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>Inicilización</b>: Los <code class="gris">arreglos</code> pueden ser inicializados durante su declaración con valores específicos para cada elemento. Por ejemplo, <code class="gris">int miArreglo[3] = {1, 2, 3};</code> crea un arreglo de enteros con tres elementos inicializados a 1, 2 y 3, respectivamente.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>Uso de bucles</b>: Dado que los arreglos contienen múltiples elementos del mmismo tipo, es común utilizar bucles por ejemplo, bucle <i>for</i> para recorrerlos y realizar operaciones en cada uno de los elementos.
+            </p>
+        </li>
+        <li>
+            <p>
+                <b>Fuera de limites</b>: Es esencial tener cuidado con los índices de los <code class="gris">arreglos</code>, ya que si se intenta acceder a una posición fuera de los limites del arreglo por ejemplo, un índice negativo o mayor que el tamaño del <code class="gris">arreglo</code>, se producirá un comportamiento indefinido y podría resultar en errores o fallas del programa.
+            </p>
+        </li>
+    </ul>
+    <h3>Práctica 1:</h3>
+    <p>
+        Para comenzar con la práctica de este módulo, necesitamos conocer la estructura básica de <span class="azul">C++</span>. Una vez familiarizados con ella, procederemos a declarar una variable con el tipo de dato de números enteros. Posteriormente, abriremos corchetes <code class="gris">[]</code> y dentro de ellos, ingresaremos el número <code class="gris">5</code>. Aquí tienes un código de ejemplo:
+    </p>
+<pre><code class="cpp">1   #<span class="rojo">include</span><span class="celeste">&lt;iostream></span>
+2   <span class="rojo">using namespace</span><span class="violeta">std</span><span class="rojo">;</span>
+3   <span class="rojo">int</span> <span class="violeta">main</span>()
+4       {
+5           <span class="rojo">int</span> numeros[<span class="celeste">5</span>];
+6           <span class="rojo">return</span> <span class="celeste">0</span>;
+7       }</code></pre>
+    <br>
+    <p>
+        Podemos observar que hemos declarado la variable <code class="gris">numeros</code>, pero le asignamos <code class="gris">5</code> entre los corchetes. Esta especificación indica que nuestra variable, que originalmente solo tenía espacio para almacenar un valor, ahora cuenta con 5 espacios. Esto es lo que conocemos como <code class="gris">arreglo</code>.
+    </p>
+    <p>
+        Al igual que con cualquier variable, al declarar un <code class="gris">arreglo</code>, sus elementos tienen valores nulos inicialmente. Sin embargo, podemos comenzar a manipularlo y asignarle valores.
+    </p>
+    <div class="center">
+        <b>¿Cómo damos valores a un arreglo?</b>
+    </div>
+    <p>
+        Continuaremos con la práctica para darle valores a la variable <code class="gris">numeros</code>. Para ello, llamaremos al arreglo y dentro de los corchetes indicaremos la posición en la que deseamos ingresar el dato.
+    </p>
+    Por ejemplo: <br>
+<pre><code class="cpp">1   #<span class="rojo">include</span><span class="celeste">&lt;iostream></span>
+2   <span class="rojo">using namespace</span> <span class="violeta">std</span><span class="rojo">;</span>
+3   <span class="rojo">int</span> <span class="violeta">main</span>()
+4       {
+5           <span class="rojo">int</span> numero[<span class="celeste">5</span>];
+6           numeros[<span class="celeste">0</span>] = <span class="celeste">3</span>;
+7           <span class="rojo">return</span> <span class="celese">0</span>;
+8       }</code></pre>
+    <br>
+    <p>
+        En el código, hemos asignado el valor <code class="gris">3</code> a la posición cero del <code class="gris">arreglo</code>. Cabe destacar que los <code class="gris">arreglos</code> en <span class="azul">C++</span> comienzan a contarse desde el índice cero. A continuacion, procederemos a mostrar en pantalla el contenido de la posición cero del arreglo <code class="gris">numeros</code>.
+    </p>
+<pre><code class="cpp">1   #<span class="rojo">include</span><span class="celeste">&lt;iostream></span>
+2   <span class="rojo">using namespace</span> <span class="violeta">std</span><span class="rojo">;</span>
+3   <span class="rojo">int</span> <span class="violeta">main</span>()
+4       {
+5           <span class="rojo">int</span> numeros[<span class="celeste">5</span>];
+6           numeros[<span class="celeste">0</span>] = <span class="celeste">3</span>;
+7           cout <span class="rojo">&lt;&lt;</span> numeros[<span class="celeste">0</span>];
+8           <span class="rojo">return</span> <span class="celeste">0</span>;
+9       }</code></pre>
+    <p>
+        Utilizamos <code class="gris">cout</code> paar mostrar en pantalla el contenido del <code class="gris">arreglo</code> numeros en la posición cero. Aquí tienes una imagen de la consola parra visualizar lo que muestra en pantalla:
+    </p>
+    <div class="center">
+        <img src="Imagenes/imagen1.png" alt="">
+    </div>
+    <p>
+        Efectivamente, nos muestra el número <code class="gris">3</code> en pantalla.
+    </p>
+    <h3>Práctica 2:</h3>
+    <p>
+        En esta segunda práctica, realizaremos las misma actividad, pero daremos valores al <code class="gris">arreglo</code> desde su declaración. Para lograr esto, en el momento de declarar el arreglo, asignaremos valores utilizando el operador de asignación <code class="gris">=</code> seguido de llaves <code class="gris">{}</code>. Dentro de las llaves, ingresaremos los valores de las 5 posiciones de nuestro arreglo. Veamos el siguiente código de ejemplo:
+    </p>
+<pre><code class="cpp">1   #<span class="rojo">include</span><span class="celeste">&lt;iostream></span>
+2   <span class="rojo">using namespace</span> <span class="violeta">std</span>;
+3   <span class="rojo">int</span> <span class="violeta">main</span>()
+4       {
+5           <span class="rojo">int</span> numeros[<span class="celeste">5</span>] = { <span class="celeste">2</span>, <span class="celeste">6</span>, <span class="celeste">8</span>, <span class="celeste">9</span>, <span class="celeste">7</span>};
+6           <span class="rojo">return</span> <span class="celeste">0</span>;
+7       }</code></pre>
+
+    <p>
+       Como podemos observar hemos asignado los siguientes valores arrelo:
+    </p>
+    <p>
+        En la posición <code class="gris">[0]</code>el 2. En la posición <code class="gris">[1]</code>el 6. En la posición <code class="gris">[2]</code>el 8. En la posición <code class="gris">[3]</code> el 9, En la posición <code class="gris">[4]</code> el 7. 
+    </p>
+    <p>
+        Esta es otra menra de asignarle valores a un <code class="gris">arreglo</code>. Ahora procederemos a mostrar todo el <code class="gris">arreglo</code> en pantalla utilizando <code class="gris">cout</code> y llamando a las posiciones del arreglo. Añadiremos una separación entre cada posición del arreglo parra una mejor visualización. Tomaremos la siguiente imagen como ejemplo:
+    </p>
+<pre><code class="cpp">1  #<span class="rojo">include</span><span class="celeste">&lt;iostream></span>
+2   <span class="rojo">using namespace</span> <span class="violeta">std</span>;
+3   <span class="rojo">int</span> <span class="violeta">main</span>()
+4       {
+5           <span class="rojo">int</span> numeros[<span class="celeste">5</span>] = { <span class="celeste">2</span>, <span class="celeste">6</span>, <span class="celeste">8</span>, <span class="celeste">9</span>, <span class="celeste">7</span>};
+6           cout <span class="rojo">&lt;&lt;</span> numeros[<span class="celeste">0</span>] <span class="rojo">&lt;&lt;</span><span class="celeste">" "</span><span class="rojo">&lt;&lt;</span> numeros[<span class="celeste">1</span>] <span class="rojo">&lt;&lt;</span><span class="celeste">" "</span><span class="rojo">&lt;&lt;</span> numeros[<span class="celeste">2</span>] class="rojo">&lt;&lt;</span><span class="celeste">" "</span><span class="rojo">&lt;&lt;</span> numeros[<span class="celeste">3</span>]<span class="rojo">&lt;&lt;</span><span class="celeste">" "</span><span class="rojo">&lt;&lt;</span> numeros[<span class="celeste">4</span>];
+7           <span class="rojo">return</span> <span class="celeste">0</span>;
+8       }</code></pre>
+    <div class="center">
+        <img src="Imagenes/imagen2.png" alt="">
+    </div>
+    <p>
+        Como podemos observar, mos muestra los números que fueron asignados durante la declaración del <code class="gris">arreglo</code>.
+    </p>
+    <h3>Práctica 3</h3>
+    <p>
+        En esta tercera práctica indexamos el <code class="gris">array</code> utilizando la estructura de repetición <code class="gris">for</code>, además utilizamos esta estructura para mostrar en pantalla los contenidos del <code class="gris">array</code>, veamos el siguiente código de ejemplo:
+    </p>
+<pre><code class="cpp">1   #<span class="rojo">include</span><span class="celeste">&lt;iostream></span>
+2   <span class="rojo">using namespace</span> <span class="violeta">std</span>;
+3   <span class="rojo">int</span> <span class="violeta">main</span>()
+4       {
+5           <span class="rojo">int</span> numeros[<span class="celeste">5</span>] = { <span class="celeste">2</span>, <span class="celeste">6</span>, <span class="celeste">8</span>, <span class="celeste">9</span>, <span class="celeste">7</span>};
+6           <span class="rojo">for</span>(<span class="rojo">int</span> i = <span class="celeste">0</span>; i &lt;= <span class="celeste">4</span> ; i++ )
+7               {
+8                   cout<span class="rojo">&lt;&lt;<span class="celeste">"Posicion del array: "<span class="rojo">&lt;&lt;</span>i<span class="rojo">&lt;&lt;</span><span class="celeste">" contenido del array: "</span><span class="rojo">&lt;&lt;</span>numeros[i]<span class="rojo">&lt;&lt;</span>endl;
+9               }
+10           <span class="rojo">return</span> <span class="celes">0</span>;
+11      }</code></pre>
+    <div class="center">
+        <img src="Imagenes/imagen3.png" alt="">
+    </div>
+    <fieldset>
+        <legend>Ejercicios:</legend>
+        <ol>
+            <li>
+                <p>
+                    Realizar un algoritmo donde el usuario pueda ingresar por teclado 5 números a un <code class="gris">array</code>, una vez ingresados esos 5 números deben ser motrados en pantalla.
+                    <center>
+                        <iframe width="665" height="570" src="https://www.youtube.com/embed/g0w7m6qi884" title="C++ / Arreglos 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </center>
+                </p>
+            </li>
+            <li>
+                <p>
+                    Realizar un algoritmo con el siguiente <code class="gris">arreglo</code>:
+                </p>
+<pre><code class="cpp">     <span class="rojo">int</span> arr[] = { <span class="celeste">1</span>, <span class="celeste">2</span>, <span class="celeste">3</span>, <span class="celeste">4</span>, <span class="celeste">5</span>};</code></pre>
+                <p>
+                    Nuestro algoritmo debe multiplicar por 10 cada uno de los numeros en el <code class="gris">arreglo</code>, nuestro programa debe quedar como el siguiente video:
+                </p>
+                <div class="center">
+                    <img src="Imagenes/imagen4.png" alt="">
+                </div>
+                <p>
+                    Las primeras 5 lineas de código estan escritas a mano una por una, las 5 ultimas estan creadas con un bucle <code class="gris">for</code>.
+                </p>    
+            </li>
+            <li>
+                <p>
+                    Realice un programa donde el usuario pueda ingresar por teclado 5 números. Estos números deberán ser almacenados en un <code class="gris">arreglo</code>. Luego, el programa deberá calcular y mostrar en pantalla el valor de cada número aplicando un descuento del 20%, la entrada y salida de datos se debe realizar con estructura de repetición <code class="gris">for</code>. Al finalizar, deberá preguntarle al usuario si desea volver a ejecutar el programa y, en caso de responder afirmativamente, el proceso deberá repetirse.
+                </p>
+                    <i>Ayuda:</i><br>
+                    <div class="center">
+                        <code> Valor final = Número - (Número x 0.20)</code>
+                    </div>
+                    <div class="center"><b>O</b></div>
+                      <div class="center">
+                        <code> Valor final = Número x 0.80</code>
+                    </div>
+                    <br>
+                   <center>
+                        <iframe width="1028" height="566" src="https://www.youtube.com/embed/FTjdRDXYY_w" title="Arrays - Ejercicio 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </center>
+            </li>
+            <li>
+                <p>
+                    Realice un programa donde el usuario pueda ingresar por teclado 4 números. Estos números deberán ser almacenados en un <code class="gris">arreglo</code>. Luego, el programa deberá crear un segundo <code class="gris">arreglo</code> de tipo <span class="celeste">booleano</span> con la misma cantidad de posiciones. Para cada número ingresado, se deberá almacenar el valor <span class="dorado">true</span> en el arreglo <span class="celeste">booleano</span> si el número es menor a 1000, o <span class="dorado">false</span> en caso contrario. Finalmente, el programa deberá mostrar en pantalla el contenido de ambos arreglos utilizando estructuras de repetición for. Al finalizar, deberá preguntarle al usuario si desea volver a ejecutar el programa y, en caso de responder afirmativamente, el proceso deberá repetirse.
+                </p>
+                    <i>Ayuda:</i><br>
+                    <ul>
+                        <li>
+                            Declaración de variable booleana: <br>
+<pre><code class="cpp">     <span class="celeste">bool</span> dato<span class="rojo">[</span><span class="violeta">10</span><span class="rojo">]</span>;</code></pre>
+                        </li>
+                        <li>
+                            Recuerde que cout muestra los valores <span class="celeste">booleanos</span> como <code>1</code> y <code>0</code>. En este ejercicio deberá mostrar los textos <span class="dorado">"true"</span> y <span class="dorado">"false"</span> según corresponda.
+                        </li>
+                    </ul>
+                <center>
+                    <iframe width="835" height="570" src="https://www.youtube.com/embed/as4IFay545k" title="Arrays - Ejercicio 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </center>
+
+                    
+                
+            </li>
+            <li>
+                <p>
+                    Realice un programa donde el usuario pueda ingresar por teclado 10 números. Estos números deberán ser almacenados en un <code class="gris">arreglo</code>. Una vez ingresados, el programa deberá ordenarlos de menor a mayor y mostrar el resultado en pantalla. Al finalizar, deberá preguntarle al usuario si desea volver a ejecutar el programa. En caso de responder afirmativamente, el programa deberá limpiar la pantalla y permitir el ingreso de un nuevo conjunto de números. Este proceso deberá repetirse hasta que el usuario decida finalizar la ejecución. Utilice estructuras de repetición para la carga de datos y para el ordenamiento de los valores.
+                </p>
+                <i>Ayuda:</i><br>
+                <div class="center">
+                    <b>Utilice método burbuja: <a href="burbuja.html">Click aquí para material de ayuda.</a></b>
+                </div>
+                <br>
+                <center>
+                    <iframe width="648" height="570" src="https://www.youtube.com/embed/XGYg8XfbtkA" title="Arrays - Ejercicio 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </center>
+            </li>
+            <li>
+                <p>
+                    Diseñar un algoritmo que debe permitir al usuario ingresar la cantidad de números que desea ordenar, seguido de los números mismos a ordenar. Finalmente, se debe mostrar los números ordenados en pantalla. utilice el método de ordenamiento burbuja.
+                </p>
+                <i>En este ejercicio, se solicita generar vectores dinámicos utilizando la siguiente librería:</i><br>
+<pre><code class="cpp">     #<span class="celeste">include</span><span class="naranja">&lt;vector></span></code></pre><br>
+                <i>Ejemplo para crear vector dinámico:</i><br>
+<pre><code class="cpp">    <span class="celeste">int</span> conta;
+    cin<span class="rojo">>></span>conta;
+    vector<span class="rojo">&lt;</span><span class="celeste">int</span><span class="rojo">></span> numeros<span class="celeste">(</span>conta<span class="celeste">)</span>;
+    <span class="verde">// "numeros" será el vector dinámico.</span></code></pre><br>
+            <center>
+                <iframe width="1013" height="570" src="https://www.youtube.com/embed/EyO3kKF4Ng0" title="Arrays - Ejercicio 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </center>
+            </li>
+            <li>
+                <p>
+                    Desarrolla un algoritmo que permita ingresar las notas de 5 alumnos cuyos nombres ya están predefinidos en un <code class="gris">arreglo</code>. Luego, el programa debera ordenar a los alunos junto con sus respectivas calificaciones de mayor a menor utilizando el método de ordenamiento burbuja. Finalmente, se mostrará en pantalla la lista de alumnos con sus notas ordenadas según su rendimiento.
+                </p>
+                <i>En este ejercicio, se solicita generar vectores con datos tipo <span class="naranja">string</span> para eso utilice la siguiente librería:</i><br>
+<pre><code class="cpp">     #<span class="celeste">include</span><span class="naraja">&lt;string></span></code></pre><br>
+                <i>Ejemplo para crear vector del tipo <span class="naranja">string</span>:</i>
+<pre><code class="cpp">     vector<span class="rojo">&lt;</span><span class="naranja">string</span><span class="rojo">></span>alumnos;</code></pre><br>
+                <p>
+                    Aquí tienes una lista de 5 nombres predefinidos:
+                </p>
+                <ul>
+                    <li>Andres.</li>
+                    <li>Camila.</li>
+                    <li>Mateo.</li>
+                    <li>Valentina.</li>
+                    <li>Bruno.</li>
+                </ul>
+                <center>
+                    <iframe width="1013" height="570" src="https://www.youtube.com/embed/qRfgraHBbN4" title="Arrays - Ejercicio 7" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </center>
+            </li>
+        </ol>
+    </fieldset>
+    <br>
+    <hr>
+    <br>
+</body>
+</html>
